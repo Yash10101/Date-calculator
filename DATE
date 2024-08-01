@@ -1,0 +1,39 @@
+import java.util.Scanner ;
+public class DATE
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int day = sc.nextInt();
+		int year = sc.nextInt();
+		int [] NoOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		boolean b = true;
+		if(year%4==0){
+		  NoOfDays[1]=29; 
+		  b = true ;
+		}
+		 
+		int dd = day;
+		int mm = 1;
+		
+		for(int i = 0; i<12;i++){
+		    if(dd <= NoOfDays[i]){
+		        break;
+		    }
+		    else {
+		        dd = dd - NoOfDays[i] ;
+		        mm++;
+		        System.out.println(dd+"/"+mm+"/"+year);
+		    }
+		    System.out.println(dd+"/"+mm+"/"+year);
+		}
+		if(b=true){
+		    System.out.println("leap year");
+		}
+		else {
+		    System.out.println("not a leap year");
+		}
+		
+		
+		
+	}
+}
